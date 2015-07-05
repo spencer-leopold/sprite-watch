@@ -1,0 +1,36 @@
+${{#spritesheet}}{{container}}{{/spritesheet}}: (
+  {{#items}}
+  '{{name}}-x': -{{x}}px,
+  '{{name}}-y': -{{y}}px,
+  '{{name}}-width': {{width}}px,
+  '{{name}}-height': {{height}}px,
+  {{/items}}
+);
+
+{{#items}}
+%{{#spritesheet}}{{container}}{{/spritesheet}}-{{name}}-dimensions {
+  width: {{width}}px;
+  height: {{height}}px;
+}
+%{{#spritesheet}}{{container}}{{/spritesheet}}-{{name}}-background {
+  background: image-url('sprites/{{#spritesheet}}{{spriteFileName}}{{/spritesheet}}') -{{x}}px -{{y}}px no-repeat;
+}
+{{/items}}
+
+{{#spritesheet}}
+@mixin {{container}}-sprite($icon, $set-dimensions: false) {
+  @extend %{{container}}-#{$icon}-background;
+
+  @if $set-dimensions == true {
+    @extend %{{container}}-#{$icon}-dimensions;
+  }
+}
+
+@function {{container}}-sprite-width($icon) {
+  @return map-get(${{container}}, "#{$icon}-width");
+}
+
+@function {{container}}-sprite-height($icon) {
+  @return map-get(${{container}}, "#{$icon}-height");
+}
+{{/spritesheet}}
