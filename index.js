@@ -1,40 +1,47 @@
 var path = require('path');
 var fs = require('fs');
-var Mundler = require('./lib/mundler');
+var SpriteWatch = require('./lib/sprite-watch');
 
-module.exports = function mundlerInit(o, args) {
+module.exports = function init(o, args) {
   var options;
 
   if (!!o) {
     if (typeof o !== 'object' || Array.isArray(o)) {
-      throw new Error('Mundler options must be an object');
+      throw new Error('SpriteWatch options must be an object');
     }
 
     options = o;
   }
-  else if (args && !!args.config) {
-    try {
-      options = require(args.config);
+  else if (args && (!!args.config || (!!args._ && args._.length))) {
+    if (args._.length) {
+      options = args;
+      options.src = args._[0];
+      options.dest = args._[1];
     }
-    catch (e) {
-      throw e;
+    else {
+      try {
+        options = require(args.config);
+      }
+      catch (e) {
+        throw e;
+      }
     }
   }
   else {
     try {
       var package = require(path.resolve('package.json'));
 
-      if (!!package.mundler) {
-        options = package.mundler;
+      if (!!package.sprites) {
+        options = package.sprites;
       }
       else {
-        var config = path.resolve('mundler.config.js');
+        var config = path.resolve('sprites.config.js');
 
         if (fs.existsSync(config)) {
           options = require(config);
         }
         else {
-          throw new Error('Cannot find mundler.config.js configuration');
+          throw new Error('Cannot find sprites.config.js configuration');
         }
       }
     }
@@ -43,5 +50,9 @@ module.exports = function mundlerInit(o, args) {
     }
   }
 
-  return new Mundler(options, args);
+  if (args && !!args.watch) {
+    options.watch = args.watch;
+  }
+
+  return new SpriteWatch(options);
 }

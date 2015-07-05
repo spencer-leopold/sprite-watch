@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var EstrnSprites = require('./lib/sprite-watch');
+var spriteWatch = require('./');
 var argv = require('yargs')
     .usage('Usage: sprite-watch <sources> -d [str] -o [str] -p [num] -a [str] -e [str] -f [str] -t [str] -w [bool]')
     .alias('d', 'dest')
@@ -27,18 +27,10 @@ var argv = require('yargs')
     .alias('w', 'watch')
     .default('w', false)
     .describe('w', 'Whether to watch source directory')
-    // .demand(['o'])
-    // .demand(2)
+    .help('h')
+    .alias('h', 'help')
     .argv;
 
-if (!Object.keys(argv).length) {
-  new EstrnSprites();
-}
-else {
-  if (argv._.length) {
-    argv.src = argv._[0];
-    argv.dest = argv._[1];
-  }
+var sprites = spriteWatch(null, argv);
+sprites.start();
 
-  new EstrnSprites(argv);
-}
