@@ -1,6 +1,6 @@
 var path = require('path');
 var fs = require('fs');
-var SpriteWatch = require('./lib/sprite-watch');
+var SpritegenSheets = require('./lib/spritegen-sheets');
 
 module.exports = function init(o, args) {
   var options;
@@ -31,17 +31,17 @@ module.exports = function init(o, args) {
     try {
       var package = require(path.resolve('package.json'));
 
-      if (!!package.sprite_watch) {
-        options = package.sprite_watch;
+      if (!!package.spritegen_sheets) {
+        options = package.spritegen_sheets;
       }
       else {
-        var config = path.resolve('sprite-watch.config.js');
+        var config = path.resolve('spritegen-sheets.config.js');
 
         if (fs.existsSync(config)) {
           options = require(config);
         }
         else {
-          throw new Error('Cannot find sprite-watch.config.js configuration');
+          throw new Error('Cannot find spritegen-sheets.config.js configuration');
         }
       }
     }
@@ -54,5 +54,5 @@ module.exports = function init(o, args) {
     options.watch = args.watch;
   }
 
-  return new SpriteWatch(options);
+  return new SpritegenSheets(options);
 }

@@ -1,5 +1,5 @@
 {
-  "name": "sprite-watch",
+  "name": "spritegen-sheets",
   "version": "1.0.0",
   "description": "Configurable sprite generator using spritesmith",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:spencer-leopold/sprite-watch.git"
+    "url": "git@github.com:spencer-leopold/spritegen-sheets.git"
   },
   "keywords": [
     "sprites",
@@ -23,11 +23,11 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/spencer-leopold/sprite-watch/issues"
+    "url": "https://github.com/spencer-leopold/spritegen-sheets/issues"
   },
-  "homepage": "https://github.com/spencer-leopold/sprite-watch",
+  "homepage": "https://github.com/spencer-leopold/spritegen-sheets",
   "bin": {
-    "sprite-watch": "./bin.js"
+    "spritegen-sheets": "./bin.js"
   },
   "dependencies": {
     "bluebird": "^2.9.32",

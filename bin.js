@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var spriteWatch = require('./');
+var spritegenSheets = require('./');
 var argv = require('yargs')
     .usage('Usage: sprite-watch <sources> -d [str] -o [str] -p [num] -a [str] -e [str] -f [str] -t [str] -w [bool]')
     .alias('d', 'dest')
@@ -31,6 +31,6 @@ var argv = require('yargs')
     .alias('h', 'help')
     .argv;
 
-var sprites = spriteWatch(null, argv);
+var sprites = spritegenSheets(null, argv);
 sprites.start();
 
