@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/spencer-leopold/sprite-watch",
   "bin": {
-    "mundler": "./bin.js"
+    "sprite-watch": "./bin.js"
   },
   "dependencies": {
     "bluebird": "^2.9.32",
