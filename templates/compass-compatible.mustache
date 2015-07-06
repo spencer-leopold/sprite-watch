@@ -18,6 +18,15 @@ ${{#spritesheet}}{{container}}{{/spritesheet}}: (
 {{/items}}
 
 {{#spritesheet}}
+
+@function sprite-x($map, $imgName) {
+  @return map-get($map, #{$imgName}-x);
+}
+
+@function sprite-y($map, $imgName) {
+  @return map-get($map, #{$imgName}-y);
+}
+
 @mixin {{container}}-sprite($imgName, $set-dimensions: false) {
   @extend %{{container}}-#{$imgName}-background;
 
