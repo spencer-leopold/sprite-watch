@@ -31,17 +31,17 @@ module.exports = function init(o, args) {
     try {
       var package = require(path.resolve('package.json'));
 
-      if (!!package.sprites) {
-        options = package.sprites;
+      if (!!package.sprite_watch) {
+        options = package.sprite_watch;
       }
       else {
-        var config = path.resolve('sprites.config.js');
+        var config = path.resolve('sprite-watch.config.js');
 
         if (fs.existsSync(config)) {
           options = require(config);
         }
         else {
-          throw new Error('Cannot find sprites.config.js configuration');
+          throw new Error('Cannot find sprite-watch.config.js configuration');
         }
       }
     }
