@@ -1,3 +1,5 @@
+'use strict';
+
 var path = require('path');
 var fs = require('fs');
 var SpritegenSheets = require('./lib/spritegen-sheets');
@@ -29,10 +31,10 @@ module.exports = function init(o, args) {
   }
   else {
     try {
-      var package = require(path.resolve('package.json'));
+      var mainPackage = require(path.resolve('package.json'));
 
-      if (!!package.spritegen_sheets) {
-        options = package.spritegen_sheets;
+      if (!!mainPackage.spritegen_sheets) {
+        options = mainPackage.spritegen_sheets;
       }
       else {
         var config = path.resolve('spritegen-sheets.config.js');
@@ -55,4 +57,4 @@ module.exports = function init(o, args) {
   }
 
   return new SpritegenSheets(options);
-}
+};

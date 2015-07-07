@@ -4,7 +4,10 @@
   "description": "Configurable sprite generator using spritesmith",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jshint": "jshint lib/*.js index.js --verbose",
+    "test": "mocha -R spec ./test --recursive",
+    "coverage": "istanbul cover _mocha -- -R spec ./test --recursive",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -31,15 +34,25 @@
   },
   "dependencies": {
     "bluebird": "^2.9.32",
-    "chalk": "^1.0.0",
+    "chalk": "^1.1.0",
     "chokidar": "^1.0.1",
-    "glob": "^4.3.5",
+    "glob": "^5.0.13",
     "gmsmith": "^0.5.0",
-    "object-assign": "^2.0.0",
+    "object-assign": "^3.0.0",
     "shelljs": "^0.3.0",
     "spritesheet-templates": "^8.2.0",
     "spritesmith": "^1.1.0",
     "url2": "^1.0.3",
-    "yargs": "^2.1.1"
+    "yargs": "^3.15.0"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "chai-as-promised": "^5.1.0",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.15",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5",
+    "sinon": "^1.15.3",
+    "sinon-chai": "^2.8.0"
   }
 }
