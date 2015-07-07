@@ -8,12 +8,12 @@ ${{#spritesheet}}{{container}}{{/spritesheet}}: (
 );
 
 {{#items}}
-%{{#spritesheet}}{{container}}{{/spritesheet}}-{{name}}-dimensions {
+%{{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-dimensions {
   width: {{width}}px;
   height: {{height}}px;
 }
-%{{#spritesheet}}{{container}}{{/spritesheet}}-{{name}}-background {
-  background: image-url('sprites/{{#spritesheet}}{{spriteFileName}}{{/spritesheet}}') -{{x}}px -{{y}}px no-repeat;
+%{{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-background {
+  background: image-url('sprites/{{#with ../spritesheet}}{{spriteFileName}}{{/with}}') -{{x}}px -{{y}}px no-repeat;
 }
 {{/items}}
 
