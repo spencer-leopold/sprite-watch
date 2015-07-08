@@ -9,16 +9,15 @@ module.exports = function init(o, args) {
 
   if (!!o) {
     if (typeof o !== 'object' || Array.isArray(o)) {
-      throw new Error('SpriteWatch options must be an object');
+      throw new Error('SpritegenSheets options must be an object');
     }
 
     options = o;
   }
   else if (args && (!!args.config || (!!args._ && args._.length))) {
-    if (args._.length) {
+    if (args._ && args._.length) {
       options = args;
       options.src = args._[0];
-      options.dest = args._[1];
     }
     else {
       try {
@@ -52,8 +51,21 @@ module.exports = function init(o, args) {
     }
   }
 
-  if (args && !!args.watch) {
-    options.watch = args.watch;
+  // Override any options that are set in CLI
+  if (args) {
+    for (var prop in args) {
+      if (args.hasOwnProperty(prop) && !!args[prop]) {
+        if (args[prop] === 'true') {
+          options[prop] = true;
+        }
+        else if (args[prop] === 'false') {
+          options[prop] = false;
+        }
+        else {
+          options[prop] = args[prop];
+        }
+      }
+    }
   }
 
   return new SpritegenSheets(options);
