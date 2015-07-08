@@ -1,0 +1,243 @@
+$arrows: (
+  'arrow-down_white-x': -0px,
+  'arrow-down_white-y': -295px,
+  'arrow-down_white-width': 16px,
+  'arrow-down_white-height': 10px,
+  'arrow-left_purple-x': -0px,
+  'arrow-left_purple-y': -475px,
+  'arrow-left_purple-width': 10px,
+  'arrow-left_purple-height': 16px,
+  'arrow-left_white-x': -0px,
+  'arrow-left_white-y': -628px,
+  'arrow-left_white-width': 10px,
+  'arrow-left_white-height': 16px,
+  'arrow-right_purple-x': -0px,
+  'arrow-right_purple-y': -577px,
+  'arrow-right_purple-width': 10px,
+  'arrow-right_purple-height': 16px,
+  'arrow-right_white-x': -0px,
+  'arrow-right_white-y': -526px,
+  'arrow-right_white-width': 10px,
+  'arrow-right_white-height': 16px,
+  'arrow-up_purple-x': -0px,
+  'arrow-up_purple-y': -205px,
+  'arrow-up_purple-width': 16px,
+  'arrow-up_purple-height': 10px,
+  'arrow-up_white-x': -0px,
+  'arrow-up_white-y': -250px,
+  'arrow-up_white-width': 16px,
+  'arrow-up_white-height': 10px,
+  'nav-arrow-down_gray-x': -0px,
+  'nav-arrow-down_gray-y': -120px,
+  'nav-arrow-down_gray-width': 10px,
+  'nav-arrow-down_gray-height': 5px,
+  'nav-arrow-down_purple-x': -0px,
+  'nav-arrow-down_purple-y': -0px,
+  'nav-arrow-down_purple-width': 10px,
+  'nav-arrow-down_purple-height': 5px,
+  'nav-arrow-left_gray-x': -0px,
+  'nav-arrow-left_gray-y': -385px,
+  'nav-arrow-left_gray-width': 5px,
+  'nav-arrow-left_gray-height': 10px,
+  'nav-arrow-left_purple-x': -0px,
+  'nav-arrow-left_purple-y': -430px,
+  'nav-arrow-left_purple-width': 5px,
+  'nav-arrow-left_purple-height': 10px,
+  'nav-arrow-right_gray-x': -0px,
+  'nav-arrow-right_gray-y': -340px,
+  'nav-arrow-right_gray-width': 5px,
+  'nav-arrow-right_gray-height': 10px,
+  'nav-arrow-right_purple-x': -0px,
+  'nav-arrow-right_purple-y': -160px,
+  'nav-arrow-right_purple-width': 5px,
+  'nav-arrow-right_purple-height': 10px,
+  'nav-arrow-up_gray-x': -0px,
+  'nav-arrow-up_gray-y': -80px,
+  'nav-arrow-up_gray-width': 10px,
+  'nav-arrow-up_gray-height': 5px,
+  'nav-arrow-up_purple-x': -0px,
+  'nav-arrow-up_purple-y': -40px,
+  'nav-arrow-up_purple-width': 10px,
+  'nav-arrow-up_purple-height': 5px,
+  'slideshow-arrow-left_purple-bg-x': -0px,
+  'slideshow-arrow-left_purple-bg-y': -679px,
+  'slideshow-arrow-left_purple-bg-width': 60px,
+  'slideshow-arrow-left_purple-bg-height': 60px,
+  'slideshow-arrow-right_purple-bg-x': -0px,
+  'slideshow-arrow-right_purple-bg-y': -774px,
+  'slideshow-arrow-right_purple-bg-width': 60px,
+  'slideshow-arrow-right_purple-bg-height': 60px,
+);
+
+%arrows-arrow-down_white-dimensions {
+  width: 16px;
+  height: 10px;
+}
+%arrows-arrow-down_white-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -295px no-repeat;
+}
+%arrows-arrow-left_purple-dimensions {
+  width: 10px;
+  height: 16px;
+}
+%arrows-arrow-left_purple-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -475px no-repeat;
+}
+%arrows-arrow-left_white-dimensions {
+  width: 10px;
+  height: 16px;
+}
+%arrows-arrow-left_white-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -628px no-repeat;
+}
+%arrows-arrow-right_purple-dimensions {
+  width: 10px;
+  height: 16px;
+}
+%arrows-arrow-right_purple-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -577px no-repeat;
+}
+%arrows-arrow-right_white-dimensions {
+  width: 10px;
+  height: 16px;
+}
+%arrows-arrow-right_white-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -526px no-repeat;
+}
+%arrows-arrow-up_purple-dimensions {
+  width: 16px;
+  height: 10px;
+}
+%arrows-arrow-up_purple-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -205px no-repeat;
+}
+%arrows-arrow-up_white-dimensions {
+  width: 16px;
+  height: 10px;
+}
+%arrows-arrow-up_white-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -250px no-repeat;
+}
+%arrows-nav-arrow-down_gray-dimensions {
+  width: 10px;
+  height: 5px;
+}
+%arrows-nav-arrow-down_gray-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -120px no-repeat;
+}
+%arrows-nav-arrow-down_purple-dimensions {
+  width: 10px;
+  height: 5px;
+}
+%arrows-nav-arrow-down_purple-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -0px no-repeat;
+}
+%arrows-nav-arrow-left_gray-dimensions {
+  width: 5px;
+  height: 10px;
+}
+%arrows-nav-arrow-left_gray-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -385px no-repeat;
+}
+%arrows-nav-arrow-left_purple-dimensions {
+  width: 5px;
+  height: 10px;
+}
+%arrows-nav-arrow-left_purple-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -430px no-repeat;
+}
+%arrows-nav-arrow-right_gray-dimensions {
+  width: 5px;
+  height: 10px;
+}
+%arrows-nav-arrow-right_gray-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -340px no-repeat;
+}
+%arrows-nav-arrow-right_purple-dimensions {
+  width: 5px;
+  height: 10px;
+}
+%arrows-nav-arrow-right_purple-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -160px no-repeat;
+}
+%arrows-nav-arrow-up_gray-dimensions {
+  width: 10px;
+  height: 5px;
+}
+%arrows-nav-arrow-up_gray-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -80px no-repeat;
+}
+%arrows-nav-arrow-up_purple-dimensions {
+  width: 10px;
+  height: 5px;
+}
+%arrows-nav-arrow-up_purple-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -40px no-repeat;
+}
+%arrows-slideshow-arrow-left_purple-bg-dimensions {
+  width: 60px;
+  height: 60px;
+}
+%arrows-slideshow-arrow-left_purple-bg-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -679px no-repeat;
+}
+%arrows-slideshow-arrow-right_purple-bg-dimensions {
+  width: 60px;
+  height: 60px;
+}
+%arrows-slideshow-arrow-right_purple-bg-background {
+  background: image-url('sprites/arrows-sprite.png') -0px -774px no-repeat;
+}
+
+
+@function sprite-x($map, $imgName) {
+  @return map-get($map, #{$imgName}-x);
+}
+
+@function sprite-y($map, $imgName) {
+  @return map-get($map, #{$imgName}-y);
+}
+
+@mixin arrows-sprite($imgName, $set-dimensions: false) {
+  @extend %arrows-#{$imgName}-background;
+
+  @if $set-dimensions == true {
+    @extend %arrows-#{$imgName}-dimensions;
+  }
+}
+
+@mixin sprite-position($map, $imgName, $offset-x, $offset-y) {
+  $x: sprite-x($map, $imgName);
+  $y: sprite-y($map, $imgName);
+
+  background-position: ($x + $offset-x) ($y + $offset-y);
+}
+
+@mixin arrows-sprite-position($imgName, $offset-x, $offset-y) {
+  $x: sprite-x($arrows, $imgName);
+  $y: sprite-y($arrows, $imgName);
+
+  background-position: ($x + $offset-x) ($y + $offset-y);
+}
+
+@function arrows-sprite-width($imgName) {
+  @return map-get($arrows, "#{$imgName}-width");
+}
+
+@function arrows-sprite-height($imgName) {
+  @return map-get($arrows, "#{$imgName}-height");
+}
+
+@function sprite-position($map, $imgName, $offset-x, $offset-y) {
+  $x: sprite-x($map, $imgName);
+  $y: sprite-y($map, $imgName);
+
+  @return ($x + $offset-x) ($y + $offset-y);
+}
+
+@function arrows-sprite-position($imgName, $offset-x, $offset-y) {
+  $x: sprite-x($arrows, $imgName);
+  $y: sprite-y($arrows, $imgName);
+
+  @return ($x + $offset-x) ($y + $offset-y);
+}
