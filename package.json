@@ -42,6 +42,7 @@
     "spritesheet-templates": "^9.6.1",
     "spritesmith": "^1.1.0",
     "url2": "^1.0.3",
+    "vinyl": "^1.1.0",
     "yargs": "^3.15.0"
   },
   "devDependencies": {
