@@ -1,0 +1,73 @@
+${{#spritesheet}}{{container}}{{/spritesheet}}: (
+  {{#items}}
+  '{{name}}-x': -{{x}}px,
+  '{{name}}-y': -{{y}}px,
+  '{{name}}-width': {{width}}px,
+  '{{name}}-height': {{height}}px,
+  {{/items}}
+);
+
+{{#items}}
+%{{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-dimensions {
+  width: {{width}}px;
+  height: {{height}}px;
+}
+%{{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-background {
+  background: image-url('sprites/{{#with ../spritesheet}}{{spriteFileName}}{{/with}}') -{{x}}px -{{y}}px no-repeat;
+}
+{{/items}}
+
+{{#spritesheet}}
+
+@function sprite-x($map, $imgName) {
+  @return map-get($map, #{$imgName}-x);
+}
+
+@function sprite-y($map, $imgName) {
+  @return map-get($map, #{$imgName}-y);
+}
+
+@mixin {{container}}-sprite($imgName, $set-dimensions: false) {
+  @extend %{{container}}-#{$imgName}-background;
+
+  @if $set-dimensions == true {
+    @extend %{{container}}-#{$imgName}-dimensions;
+  }
+}
+
+@mixin sprite-position($map, $imgName, $offset-x, $offset-y) {
+  $x: sprite-x($map, $imgName);
+  $y: sprite-y($map, $imgName);
+
+  background-position: ($x + $offset-x) ($y + $offset-y);
+}
+
+@mixin {{container}}-sprite-position($imgName, $offset-x, $offset-y) {
+  $x: sprite-x(${{container}}, $imgName);
+  $y: sprite-y(${{container}}, $imgName);
+
+  background-position: ($x + $offset-x) ($y + $offset-y);
+}
+
+@function {{container}}-sprite-width($imgName) {
+  @return map-get(${{container}}, "#{$imgName}-width");
+}
+
+@function {{container}}-sprite-height($imgName) {
+  @return map-get(${{container}}, "#{$imgName}-height");
+}
+
+@function sprite-position($map, $imgName, $offset-x, $offset-y) {
+  $x: sprite-x($map, $imgName);
+  $y: sprite-y($map, $imgName);
+
+  @return ($x + $offset-x) ($y + $offset-y);
+}
+
+@function {{container}}-sprite-position($imgName, $offset-x, $offset-y) {
+  $x: sprite-x(${{container}}, $imgName);
+  $y: sprite-y(${{container}}, $imgName);
+
+  @return ($x + $offset-x) ($y + $offset-y);
+}
+{{/spritesheet}}
