@@ -38,7 +38,6 @@
     "chokidar": "^1.0.1",
     "glob": "^5.0.13",
     "object-assign": "^3.0.0",
-    "shelljs": "^0.5.1",
     "spritesheet-templates": "^9.6.1",
     "spritesmith": "^1.1.0",
     "svg2ttf": "^2.1.0",
