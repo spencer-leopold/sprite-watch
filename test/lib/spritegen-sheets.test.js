@@ -10,7 +10,7 @@ var SpritegenSheets = require('../../index');
 chai.use(chaiAsPromised);
 chai.use(sinonChai);
 
-describe('lib/mundler', function() {
+describe('lib/spritegen-sheets', function() {
 
   var testConfig = {
     cwd: 'test/fixtures/img',
@@ -18,12 +18,12 @@ describe('lib/mundler', function() {
       'icons/*.png',
       'arrows/*.png'
     ],
-    dest: 'test/output/cwd/sprites',
+    dest: 'test/output/cwd/',
     padding: 35,
     algorithm: 'top-down',
     engine: 'pixelsmith',
     sheetFormat: 'scss',
-    sheetDest: 'test/output/cwd/scss'
+    sheetDest: 'test/output/cwd/scss/'
   };
 
   var testConfigWithWatch = {
@@ -32,24 +32,24 @@ describe('lib/mundler', function() {
       'icons/*.png',
       'arrows/*.png'
     ],
-    dest: 'test/output/cwd/sprites',
+    dest: 'test/output/cwd/',
     padding: 35,
     algorithm: 'top-down',
     engine: 'pixelsmith',
     sheetFormat: 'scss',
-    sheetDest: 'test/output/cwd/scss',
+    sheetDest: 'test/output/cwd/scss/',
     watch: true,
   };
 
   var testConfigStringSrc = {
     cwd: 'test/fixtures/img',
     src:  'arrows/*.png',
-    dest: 'test/output/stringsrc/sprites',
+    dest: 'test/output/stringsrc/',
     padding: 35,
     algorithm: 'top-down',
     engine: 'pixelsmith',
     sheetFormat: 'scss',
-    sheetDest: 'test/output/stringsrc/scss'
+    sheetDest: 'test/output/stringsrc/scss/'
   };
 
   var testConfigNoCwd = {
@@ -57,21 +57,21 @@ describe('lib/mundler', function() {
       'test/fixtures/img/icons/*.png',
       'test/fixtures/img/arrows/*.png'
     ],
-    dest: 'test/output/nocwd/sprites',
+    dest: 'test/output/nocwd/',
     padding: 35,
     algorithm: 'top-down',
     engine: 'pixelsmith',
     sheetFormat: 'scss',
-    sheetDest: 'test/output/nocwd/scss'
+    sheetDest: 'test/output/nocwd/scss/'
   };
 
   var testConfigMissingSrc = {
-    dest: 'test/output/cwd/sprites',
+    dest: 'test/output/cwd/',
     padding: 35,
     algorithm: 'top-down',
     engine: 'pixelsmith',
     sheetFormat: 'scss',
-    sheetDest: 'test/output/cwd/scss'
+    sheetDest: 'test/output/cwd/scss/'
   };
 
   var testConfigMissingDest = {
@@ -83,7 +83,7 @@ describe('lib/mundler', function() {
     algorithm: 'top-down',
     engine: 'pixelsmith',
     sheetFormat: 'scss',
-    sheetDest: 'test/output/cwd/scss'
+    sheetDest: 'test/output/cwd/scss/'
   };
 
   describe('SpritegenSheets', function() {
@@ -156,7 +156,7 @@ describe('lib/mundler', function() {
 
         s.start().then(function(info) {
           expect(typeof info).to.equal('object');
-          expect(Object.keys(info.coords)).to.have.length(17);
+          expect(Object.keys(info[0].coords)).to.have.length(17);
           done();
         }).catch(done);
       });
