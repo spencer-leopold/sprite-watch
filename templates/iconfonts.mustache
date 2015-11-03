@@ -14,15 +14,16 @@ ${{#spritesheet}}{{container}}{{/spritesheet}}: (
        url('{{#spritesheet}}{{image}}{{/spritesheet}}.ttf') format('truetype'),
        url('{{#spritesheet}}{{image}}{{/spritesheet}}.svg#{{#spritesheet}}{{container}}{{/spritesheet}}') format('svg');
 }
+
 {{#items}}
-%{{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-dimensions,
-.{{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-dimensions {
+.{{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-dimensions,
+%{{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-dimensions {
   width: {{width}}px;
   height: {{height}}px;
 }
 
-%{{#with ../spritesheet}}{{container}}{{/with}}-{{name}},
-.{{#with ../spritesheet}}{{container}}{{/with}}-{{name}} {
+.{{#with ../spritesheet}}{{container}}{{/with}}-{{name}},
+%{{#with ../spritesheet}}{{container}}{{/with}}-{{name}} {
   &:before {
     font-family: '{{#with ../spritesheet}}{{container}}{{/with}}';
     content: '{{unicode}}';
@@ -37,8 +38,8 @@ ${{#spritesheet}}{{container}}{{/spritesheet}}: (
   }
 }
 
-%{{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-after,
-.{{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-after {
+.{{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-after,
+%{{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-after {
   &:after {
     font-family: '{{#with ../spritesheet}}{{container}}{{/with}}';
     content: '{{unicode}}';
@@ -52,7 +53,6 @@ ${{#spritesheet}}{{container}}{{/spritesheet}}: (
     @content;
   }
 }
-
 {{/items}}
 
 {{#spritesheet}}
