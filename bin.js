@@ -2,7 +2,7 @@
 
 var spritegenSheets = require('./');
 var argv = require('yargs')
-    .usage('Usage: sprite-watch <sources> --dest [str] --sheetDest [str] -p [num] -a [str] -e [str] -f [str] -t [str] -c [str] -w [bool]')
+    .usage('Usage: spritegen-sheets <sources> --dest [str] --sheetDest [str] -p [num] -a [str] -e [str] -f [str] -t [str] -c [str] -w [bool]')
     .alias('d', 'dest')
     .describe('d', 'Sprite destination directory')
     .alias('s', 'sheetDest')

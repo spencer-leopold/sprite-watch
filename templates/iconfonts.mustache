@@ -1,7 +1,5 @@
 ${{#spritesheet}}{{container}}{{/spritesheet}}: (
   {{#items}}
-  '{{name}}-x': -{{dX}}px,
-  '{{name}}-y': -{{dY}}px,
   '{{name}}-width': {{width}}px,
   '{{name}}-height': {{height}}px,
   {{/items}}
@@ -17,71 +15,48 @@ ${{#spritesheet}}{{container}}{{/spritesheet}}: (
        url('{{#spritesheet}}{{image}}{{/spritesheet}}.ttf') format('truetype'),
        url('{{#spritesheet}}{{image}}{{/spritesheet}}.svg#{{#spritesheet}}{{container}}{{/spritesheet}}') format('svg');
 }
-
 {{#items}}
 %{{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-dimensions {
   width: {{width}}px;
   height: {{height}}px;
 }
+
 %{{#with ../spritesheet}}{{container}}{{/with}}-{{name}} {
   &:before {
     font-family: '{{#with ../spritesheet}}{{container}}{{/with}}';
     content: '{{unicode}}';
   }
 }
-{{/items}}
 
-{{#spritesheet}}
-
-@function sprite-x($map, $imgName) {
-  @return map-get($map, #{$imgName}-x);
-}
-
-@function sprite-y($map, $imgName) {
-  @return map-get($map, #{$imgName}-y);
-}
-
-@mixin {{container}}-sprite($imgName, $set-dimensions: false) {
-  @extend %{{container}}-#{$imgName}-background;
-
-  @if $set-dimensions == true {
-    @extend %{{container}}-#{$imgName}-dimensions;
+@mixin {{#with ../spritesheet}}{{container}}{{/with}}-{{name}} {
+  &:before {
+    font-family: '{{#with ../spritesheet}}{{container}}{{/with}}';
+    content: '{{unicode}}';
+    @content;
   }
 }
 
-@mixin sprite-position($map, $imgName, $offset-x, $offset-y) {
-  $x: sprite-x($map, $imgName);
-  $y: sprite-y($map, $imgName);
-
-  background-position: ($x + $offset-x) ($y + $offset-y);
+%{{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-after {
+  &:after {
+    font-family: '{{#with ../spritesheet}}{{container}}{{/with}}';
+    content: '{{unicode}}';
+  }
 }
 
-@mixin {{container}}-sprite-position($imgName, $offset-x, $offset-y) {
-  $x: sprite-x(${{container}}, $imgName);
-  $y: sprite-y(${{container}}, $imgName);
-
-  background-position: ($x + $offset-x) ($y + $offset-y);
+@mixin {{#with ../spritesheet}}{{container}}{{/with}}-{{name}}-after {
+  &:after {
+    font-family: '{{#with ../spritesheet}}{{container}}{{/with}}';
+    content: '{{unicode}}';
+    @content;
+  }
 }
-
-@function {{container}}-sprite-width($imgName) {
+{{/items}}
+{{#spritesheet}}
+@function {{container}}-width($imgName) {
   @return map-get(${{container}}, "#{$imgName}-width");
 }
 
-@function {{container}}-sprite-height($imgName) {
+@function {{container}}-height($imgName) {
   @return map-get(${{container}}, "#{$imgName}-height");
-}
-
-@function sprite-position($map, $imgName, $offset-x, $offset-y) {
-  $x: sprite-x($map, $imgName);
-  $y: sprite-y($map, $imgName);
-
-  @return ($x + $offset-x) ($y + $offset-y);
-}
-
-@function {{container}}-sprite-position($imgName, $offset-x, $offset-y) {
-  $x: sprite-x(${{container}}, $imgName);
-  $y: sprite-y(${{container}}, $imgName);
-
-  @return ($x + $offset-x) ($y + $offset-y);
 }
 {{/spritesheet}}
