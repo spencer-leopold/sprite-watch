@@ -40,7 +40,7 @@
     "mkdirp": "^0.5.1",
     "object-assign": "^3.0.0",
     "spritesheet-templates": "^9.6.1",
-    "spritesmith": "^1.1.0",
+    "spritesmith": "^3.0.0",
     "svg2ttf": "^2.1.0",
     "svgicons2svgfont": "^3.2.0",
     "svgo": "^0.5.6",
