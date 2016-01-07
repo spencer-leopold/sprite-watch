@@ -1,6 +1,6 @@
 {
   "name": "spritegen-sheets",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Configurable sprite generator using spritesmith",
   "main": "index.js",
   "scripts": {
