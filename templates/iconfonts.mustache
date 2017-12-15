@@ -7,12 +7,12 @@ ${{#spritesheet}}{{container}}{{/spritesheet}}: (
 
 @font-face {
   font-family: '{{#spritesheet}}{{container}}{{/spritesheet}}';
-  src: url('{{#spritesheet}}{{image}}{{/spritesheet}}.eot');
+  src: url('{{#spritesheet}}{{image}}{{/spritesheet}}.eot?date={{#spritesheet}}{{cacheBuster}}{{/spritesheet}}C');
   src: local('☺'),
-       url('{{#spritesheet}}{{image}}{{/spritesheet}}.eot?#iefix') format('embedded-opentype'),
-       url('{{#spritesheet}}{{image}}{{/spritesheet}}.woff') format('woff'),
-       url('{{#spritesheet}}{{image}}{{/spritesheet}}.ttf') format('truetype'),
-       url('{{#spritesheet}}{{image}}{{/spritesheet}}.svg#{{#spritesheet}}{{container}}{{/spritesheet}}') format('svg');
+       url('{{#spritesheet}}{{image}}{{/spritesheet}}.eot?date={{#spritesheet}}{{cacheBuster}}{{/spritesheet}}') format('embedded-opentype'),
+       url('{{#spritesheet}}{{image}}{{/spritesheet}}.woff?date={{#spritesheet}}{{cacheBuster}}{{/spritesheet}}') format('woff'),
+       url('{{#spritesheet}}{{image}}{{/spritesheet}}.ttf?date={{#spritesheet}}{{cacheBuster}}{{/spritesheet}}') format('truetype'),
+       url('{{#spritesheet}}{{image}}{{/spritesheet}}.svg?date={{#spritesheet}}{{cacheBuster}}{{/spritesheet}}') format('svg');
 }
 
 {{#items}}
